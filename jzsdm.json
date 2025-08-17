@@ -5,20 +5,31 @@
         "factoryId": "web-selector",
         "version": 2,
         "arguments": {
-          "name": "酱紫社",
-          "url": "https://www.jzsdm.com/",
+          "name": "酱紫社 (伪装版)",
+          "iconUrl": "https://www.jzsdm.com/upload/site/20240321-1/c13563459c202029b41829e240212f85.png",
           "searchConfig": {
-            "searchUrl": "/seacher.php?searchword={keyword}",
+            "searchUrl": "https://www.jzsdm.com/seacher.php?searchword={keyword}",
+            "rawBaseUrl": "https://www.jzsdm.com",
+            "addHeaders": {
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+              "Referer": "https://www.jzsdm.com/"
+            },
             "subjectFormatId": "a",
             "selectorSubjectFormatA": {
-              "selectLists": "xpath=//div[contains(@class,'mainleft')]/div[contains(@class,'movielist')]/ul/li/a"
+              "selectLists": "xpath=//div[contains(@class,'mainleft')]/div[contains(@class,'movielist')]/ul/li/a",
+              "selectNames": "xpath=./img/@alt",
+              "selectLinks": "xpath=./@href"
             },
             "channelFormatId": "no-channel",
             "selectorChannelFormatNoChannel": {
-              "selectEpisodes": "xpath=//div[@id='play_box']/div[contains(@class,'playlist')]/ul/li/a"
+              "selectEpisodes": "xpath=//div[@id='play_box']/div[contains(@class,'playlist')]/ul/li/a",
+              "selectEpisodeLinks": "xpath=./@href",
+              "selectEpisodeNames": "xpath=./text()"
             },
             "matchVideo": {
-              "matchVideoUrl": ""
+              "enableNestedUrl": true,
+              "matchNestedUrl": "player_.*url=(.+)",
+              "matchVideoUrl": "\\.m3u8"
             }
           }
         }
