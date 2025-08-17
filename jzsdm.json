@@ -1,0 +1,34 @@
+[
+  {
+    "id": "jzsdm.com_v1",
+    "name": "酱紫社",
+    "url": "https://www.jzsdm.com/",
+    "version": 1,
+    "enabled": true,
+    "rules": {
+      "home": {
+        "list": "xpath=//div[contains(@class,'mainleft')]/div[contains(@class,'movielist')]/ul/li",
+        "link": "xpath=./a/@href",
+        "title": "xpath=./a/img/@alt",
+        "cover": "xpath=./a/img/@src",
+        "update":"xpath=./p[@class='newname']/text()"
+      },
+      "search": {
+        "url": "/seacher.php?searchword={keyword}",
+        "list": "xpath=//div[contains(@class,'mainleft')]/div[contains(@class,'movielist')]/ul/li",
+        "link": "xpath=./a/@href",
+        "title": "xpath=./a/img/@alt",
+        "cover": "xpath=./a/img/@src",
+        "update":"xpath=./p[@class='newname']/text()"
+      },
+      "detail": {
+        "title": "xpath=//div[@class='info']/h1/text()",
+        "cover": "xpath=//div[@class='tpic']/img/@src",
+        "desc": "xpath=//div[@class='info_right']/p[1]/text()",
+        "video_list": "xpath=//div[@id='play_box']/div[contains(@class,'playlist')]/ul/li",
+        "video_link": "xpath=./a/@href",
+        "video_title": "xpath=./a/text()"
+      }
+    }
+  }
+]
