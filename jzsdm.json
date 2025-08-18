@@ -5,7 +5,7 @@
         "factoryId": "web-selector",
         "version": 2,
         "arguments": {
-          "name": "酱紫社 (决战版)",
+          "name": "酱紫社",
           "iconUrl": "https://www.google.com/s2/favicons?domain=jzsdm.com&sz=128",
           "searchConfig": {
             "searchUrl": "https://www.jzsdm.com/seacher.php?searchword={keyword}",
