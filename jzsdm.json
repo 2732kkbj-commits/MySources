@@ -5,24 +5,26 @@
         "factoryId": "web-selector",
         "version": 2,
         "arguments": {
-          "name": "酱紫社 (伪装版)",
-          "iconUrl": "https://www.jzsdm.com/upload/site/20240321-1/c13563459c202029b41829e240212f85.png",
+          "name": "酱紫社 (决战版)",
+          "iconUrl": "https://www.google.com/s2/favicons?domain=jzsdm.com&sz=128",
           "searchConfig": {
             "searchUrl": "https://www.jzsdm.com/seacher.php?searchword={keyword}",
             "rawBaseUrl": "https://www.jzsdm.com",
             "addHeaders": {
-              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
-              "Referer": "https://www.jzsdm.com/"
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+              "Referer": "https://www.jzsdm.com/",
+              "Accept-Language": "en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7"
             },
+            "requestInterval": 3000, 
             "subjectFormatId": "a",
             "selectorSubjectFormatA": {
-              "selectLists": "xpath=//div[contains(@class,'mainleft')]/div[contains(@class,'movielist')]/ul/li/a",
+              "selectLists": "xpath=//div[contains(@class,'mainleft')]//div[contains(@class,'movielist')]/ul/li/a",
               "selectNames": "xpath=./img/@alt",
               "selectLinks": "xpath=./@href"
             },
             "channelFormatId": "no-channel",
             "selectorChannelFormatNoChannel": {
-              "selectEpisodes": "xpath=//div[@id='play_box']/div[contains(@class,'playlist')]/ul/li/a",
+              "selectEpisodes": "xpath=//div[@id='play_box']//div[contains(@class,'playlist')]/ul/li/a",
               "selectEpisodeLinks": "xpath=./@href",
               "selectEpisodeNames": "xpath=./text()"
             },
