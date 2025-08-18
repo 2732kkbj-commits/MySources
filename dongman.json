@@ -10,19 +10,19 @@
           "iconUrl": "https://www.jzsdm1.com/upload/eighteen/20241227-1/991272b4a1029e60a9951c8ea874ff2a.png",
           "searchConfig": {
             "searchUrl": "https://www.jzsdm1.com/index.php/vod/search/wd/{keyword}.html",
+            "rawBaseUrl": "https://www.jzsdm1.com",
             "searchUseOnlyFirstWord": true,
             "searchRemoveSpecial": true,
             "searchUseSubjectNamesCount": 1,
-            "rawBaseUrl": "",
             "requestInterval": 3000,
             "subjectFormatId": "indexed",
             "selectorSubjectFormatA": {
-              "selectLists": "div.video-info-header \u003E a",
+              "selectLists": "div.video-info-header > a",
               "preferShorterName": true
             },
             "selectorSubjectFormatIndexed": {
-              "selectNames": "body \u003E .box-width .search-box .thumb-content \u003E .thumb-txt",
-              "selectLinks": "body \u003E .box-width .search-box .thumb-menu \u003E a",
+              "selectNames": "body > .box-width .search-box .thumb-content > .thumb-txt",
+              "selectLinks": "body > .box-width .search-box .thumb-menu > a",
               "preferShorterName": true
             },
             "selectorSubjectFormatJsonPathIndexed": {
@@ -30,19 +30,11 @@
               "selectNames": "$[*]['title','name']",
               "preferShorterName": true
             },
-            "channelFormatId": "index-grouped",
-            "selectorChannelFormatFlattened": {
-              "selectChannelNames": ".anthology-tab \u003E .swiper-wrapper a",
-              "matchChannelName": "^(?\u003Cch\u003E.+?)(\\d+)?$",
-              "selectEpisodeLists": ".anthology-list-box",
-              "selectEpisodesFromList": "a",
-              "selectEpisodeLinksFromList": "",
-              "matchEpisodeSortFromName": "第\\s*(?\u003Cep\u003E.+)\\s*[话集]"
-            },
+            "channelFormatId": "no-channel",
             "selectorChannelFormatNoChannel": {
               "selectEpisodes": ".anthology-list-play a",
               "selectEpisodeLinks": "",
-              "matchEpisodeSortFromName": "(第\\s*(?\u003Cep\u003E.+)\\s*[话集])|1080P"
+              "matchEpisodeSortFromName": "(第\\s*(?<ep>.+)\\s*[话集])|1080P"
             },
             "defaultResolution": "1080P",
             "defaultSubtitleLanguage": "CHS",
@@ -56,13 +48,17 @@
             "matchVideo": {
               "enableNestedUrl": true,
               "matchNestedUrl": "$^",
-              "matchVideoUrl": "(^http(s)?:\\/\\/(?!.*http(s)?:\\/\\/).+((m3u8)).*(\\?.+)?)|(akamaized)|(bilivideo.com)|(url=(?\u003Cv\u003E.+playlist.m3u8))",
+              "matchVideoUrl": "(^http(s)?://(?!.*http(s)?://).+((m3u8)).*(\\?.+)?)|(akamaized)|(bilivideo.com)|(url=(?<v>.+playlist.m3u8))",
               "cookies": "quality=1080P",
               "addHeadersToVideo": {
                 "referer": "",
-                "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+                "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
               }
             }
           },
           "tier": 1
         }
+      }
+    ]
+  }
+}
